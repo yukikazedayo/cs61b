@@ -32,6 +32,7 @@ public class NBody
         StdDraw.setScale(-rad,rad);
         StdDraw.clear();
         StdDraw.picture(0,0,"images/starfield.jpg");
+        StdDraw.pause(2000);
         for(int i=0;i<allpl.length;i++)
         {
             allpl[i].draw();
@@ -47,10 +48,13 @@ public class NBody
                 yForces[i]=allpl[i].calcNetForceExertedByY(allpl);
 
             }
-            StdDraw.picture(0,0,"images/starfield.jpg");
             for(int i=0;i<allpl.length;i++)
             {
                 allpl[i].update(dt,xForces[i],yForces[i]);
+            }
+            StdDraw.picture(0,0,"images/starfield.jpg");
+            for(int i=0;i<allpl.length;i++)
+            {
                 allpl[i].draw();
             }
             StdDraw.show();

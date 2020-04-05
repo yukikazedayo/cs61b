@@ -42,7 +42,7 @@ public class Planet
 		double tot=this.calcForceExertedBy(temp);
 		return (temp.yyPos-this.yyPos)/dis*tot;
 	}
-	public boolean equals(Planet temp)
+	private boolean equals(Planet temp)
 	{
 		if(this==temp)return true;
 		return false;
